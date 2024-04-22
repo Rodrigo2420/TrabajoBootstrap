@@ -1,0 +1,102 @@
+/* Estilos personalizados para hacer la página responsive */
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para la barra de navegación */
+  .navbar {
+    transition: all 0.4s ease; /* Transición suave */
+  }
+  
+  /* Estilos para la tarjeta principal */
+  .card {
+    margin-bottom: 20px; /* Margen inferior */
+  }
+  
+  /* Estilos para el encabezado de las tarjetas */
+  .card-header {
+    background-color: #007bff;
+  }
+  
+  /* Estilos para los encabezados de nivel 2 dentro de las tarjetas */
+  .card-header h2 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  
+  /* Estilos para etiquetas dentro de los grupos de formulario */
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  /* Estilos para los botones */
+  .btn {
+    margin-top: 10px; /* Margen superior */
+  }
+  
+  /* Estilos para botones primarios */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  /* Estilos para botones primarios al pasar el cursor */
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Estilos para botones secundarios */
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  /* Estilos para botones secundarios al pasar el cursor */
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  /* Estilos para el pie de página */
+  footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Media queries para ajustar estilos en diferentes tamaños de pantalla */
+  
+  /* Pantallas pequeñas (móviles) */
+  @media (max-width: 576px) {
+    body {
+      padding-top: 56px; /* Reducir espacio arriba para la barra de navegación */
+      font-size: 14px; /* Tamaño de fuente más pequeño */
+    }
+    .navbar {
+      padding: 0;
+    }
+    .navbar-brand {
+      font-size: 20px; /* Tamaño de fuente del logotipo */
+    }
+  }
+  
+  /* Pantallas medianas (tablets) */
+  @media (min-width: 576px) and (max-width: 992px) {
+    .navbar-brand {
+      font-size: 24px; /* Tamaño de fuente del logotipo */
+    }
+  }
+  
+  /* Pantallas grandes (ordenadores) */
+  @media (min-width: 992px) {
+    .navbar {
+      padding: 0 20px; /* Añadir relleno a los lados de la barra de navegación */
+    }
+    .navbar-brand {
+      font-size: 28px; /* Tamaño de fuente del logotipo */
+    }
+  }

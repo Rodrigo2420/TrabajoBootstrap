@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Título de la página-->
+    <title>Reservas de Restaurante</title>
+    <!--Enlace a la hoja de estilos bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--Enlace a la hoja de estilos personalizada-->
+    <link rel="stylesheet" href="styles.css">  
+</head>
+
+<body>
+<!--Encabezado-->  
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Inicio.html">
+                <img src="Imagenes/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Bar Nicero
+             </a>
+            <button class="navbar-toggler" type="button" data-togle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Inicio.html">Inicio</a>                
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Menu.html">Menú</a>                
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reservas.html">Reservas</a>                
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--Formulario de Reservas-->
+<section id="reservas" class="mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!--Tarjeta que contiene el formulario de reservas-->
+                <div class="card">
+                    <!--Encabezado de la tarjeta-->
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-center mb-O">Reserva tu mesa</h2>
+                    </div>
+                    <!--Cuerpo de la tarjeta del formulario-->
+                    <div class="card-body">
+                        <!--Formulario de reservas-->
+                        <form id="reservaForm" onsubmit="return validarFormulario()">
+                            <!--Campo de entrada para el nombre-->
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                            <!--Campo de entrada para los apellidos-->
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos" required>
+                            </div>
+                            <!--Campos de entrada para telefono y dni-->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="telefono">Teléfono</label>
+                                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="dni">DNI</label>
+                                    <input type="text" class="form-control" id="dni" name="dni" required>
+                                </div>   
+                            </div>
+                            <!--Campo de entrada para el correo eléctronico-->
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="text" class="form-control" id="email" name="email" required>
+                            </div>
+                            <!--Campos de selección para el número de personas y sillas para bebés-->
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="numPersonas">Número de Personas</label>
+                                    <select class="form-control" id="numPersonas" name="numPersonas" required>
+                                        <!--Opciones para seleccionar el número de personas-->
+                                        <option value="adultos">Adultos</option>
+                                        <option value="niños">Niños</option>
+                                        <option value="ambos">Ambos</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="sillasBebe">Sillas para bebés</label>
+                                    <!--Casilla de verificación para indicar si se necesitan sillas para bebés-->
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="sillasBebe" name="sillasBebe">
+                                        <label class="form-check-label" for="sillasBebe">¿Necesitan silla para bebé?</label>
+                                    </div>
+                                    <!--Campo de entrada para la cantidad de sillas para bebé-->
+                                    <div class="form-group" id="campoSillasBebe" style="display:none;">
+                                        <label for="cantidadSillasBebe">Cantidad de Sillas para Bebé</label>
+                                        <input type="number" class="form-control" id="cantidadSillasBebe" name="cantidadSillasBebe" min="1" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Campo de selección para el lugar sentado de preferencia-->
+                            <div class="form-group">
+                                <label for="lugarSentado">Lugar Sentado de Preferncia</label>
+                                <select class="form-control" id="lugarSentado" name="lugarSentado">
+                                    <!--Opciones para seleccionar el lugar sentado-->
+                                    <option value="interior">Interior</option>
+                                    <option value="exterior">Exterior</option>
+                                </select>
+                            </div>
+                            <!--Campo para la entrada para la fecha de asistencia-->
+                            <div class="form-group">
+                                <label for="fecha">Fecha de Asistencia</label>
+                                <input type="date" class="form-control" id="fecha" name="fecha" required>
+                            </div>
+                            <!--Botones de envío y reinicio del formulario-->
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mr-2">Enviar</button>
+                                <button type="reset" class="btn btn-secondary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Pie de Página-->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <!--Texto de derechos de autor-->
+        <p>Derechos de Autor &copy;2024 Bar Nicero</p>
+    </div>
+</footer>
+
+
+<!--Scripts de Bootstrap y validación de formulario-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+// Función para validar el formulario antes de enviarlo
+function validarFormulario() {
+  // Obtener los valores de los campos del formulario
+  var nombre = document.getElementById('nombre').value.trim();
+  var apellidos = document.getElementById('apellidos').value.trim();
+  var telefono = document.getElementById('telefono').value.trim();
+  var dni = document.getElementById('dni').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var numPersonas = document.getElementById('numPersonas').value;
+  var fecha = document.getElementById('fecha').value;
+
+  // Verificar que todos los campos obligatorios estén completos
+  if (nombre === '' || apellidos === '' || telefono === '' || dni === '' || email === '' || numPersonas === '' || fecha === '') {
+    // Mostrar mensaje de alerta si hay campos incompletos
+    alert('Por favor, complete todos los campos obligatorios.');
+    return false;
+  }
+
+  return true;
+}
+
+// Función para mostrar u ocultar el campo de sillas para bebé
+function mostrarCampoSillasBebe() {
+  var campoSillasBebe = document.getElementById('campoSillasBebe');
+  var checkboxSillasBebe = document.getElementById('sillasBebe');
+  
+  // Mostrar el campo si el checkbox está marcado, ocultarlo de lo contrario
+  campoSillasBebe.style.display = checkboxSillasBebe.checked ? 'block' : 'none';
+}
+
+// Asignar la función al evento de cambio del checkbox
+document.getElementById('sillasBebe').addEventListener('change', mostrarCampoSillasBebe);   
+</script>
+</body>
+</html>
